@@ -1,7 +1,8 @@
 <template>
     <li class="card-film">
-        <div>{{film.title}}</div>
-        <div>{{film.release_date}}</div>
+        <div></div>
+        <h3>{{film.title}}</h3>
+        <span class="film-date">{{film.release_date}}</span>
         <div>{{film.overview}}</div>
     </li>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <MyHeader @search=generateFilms />
-    <MyMain :filmCatalogue="filmCatalogue" />
+    <MyHeader @search=combinedSearch />
+    <MyMain :filmCatalogue="filmCatalogue" :tvSeriesCatalogue="tvSeriesCatalogue" />
   </div>
 </template>
 
@@ -19,7 +19,8 @@ export default {
   },
   data() {
     return {
-      filmCatalogue: []
+      filmCatalogue: [],
+      tvSeriesCatalogue: []
     }
   },
   methods: {
@@ -36,6 +37,24 @@ export default {
       .then (function () {
         // always executed
       });
+    },
+    generateTvSeries(keyword) {
+
+      axios.get('https://api.themoviedb.org/3/search/tv?api_key=142d3e745767ac3cb528a724ffa3c28d&query=' + keyword)
+      .then((response) => {
+        console.log(response);
+        this.tvSeriesCatalogue = response.data.results;
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .then (function () {
+        // always executed
+      });
+    },
+    combinedSearch(e){
+      this.generateFilms(e);
+      this.generateTvSeries(e);
     }
   }
 }
