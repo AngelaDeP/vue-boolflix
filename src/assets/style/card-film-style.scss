@@ -1,0 +1,9 @@
+.card-film {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: calc((100% / 5) - 20px);
+    padding: 20px;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+}
