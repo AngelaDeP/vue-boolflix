@@ -26,7 +26,7 @@ export default {
   methods: {
     generateFilms(keyword) {
 
-      axios.get('https://api.themoviedb.org/3/search/movie?api_key=142d3e745767ac3cb528a724ffa3c28d&query=' + keyword)
+      axios.get('https://api.themoviedb.org/3/search/movie?api_key=142d3e745767ac3cb528a724ffa3c28d&query=' + keyword + '&language=it-IT')
       .then((response) => {
         console.log(response);
         this.filmCatalogue = response.data.results;
@@ -40,7 +40,7 @@ export default {
     },
     generateTvSeries(keyword) {
 
-      axios.get('https://api.themoviedb.org/3/search/tv?api_key=142d3e745767ac3cb528a724ffa3c28d&query=' + keyword)
+      axios.get('https://api.themoviedb.org/3/search/tv?api_key=142d3e745767ac3cb528a724ffa3c28d&query=' + keyword + '&language=it-IT')
       .then((response) => {
         console.log(response);
         this.tvSeriesCatalogue = response.data.results;
