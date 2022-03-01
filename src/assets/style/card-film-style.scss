@@ -5,9 +5,25 @@
     width: calc((100% / 5) - 20px);
     padding: 20px;
     margin: 10px;
+    border-radius: 10px;
     background-color: rgb(255, 255, 255);
+}
+
+.film-poster {
+    width: 80%;
+    margin: 10px auto;
+    border-radius: 5px;
 }
 
 .film-date {
     margin: 10px 0px;
+}
+
+.vote-sec {
+    padding: 10px;
+}
+
+.flag {
+    width: 30px;
+    margin-bottom: 10px;
 }

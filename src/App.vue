@@ -52,9 +52,9 @@ export default {
         // always executed
       });
     },
-    combinedSearch(e){
-      this.generateFilms(e);
-      this.generateTvSeries(e);
+    combinedSearch(keyword){
+      this.generateFilms(keyword);
+      this.generateTvSeries(keyword);
     }
   }
 }
